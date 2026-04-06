@@ -92,6 +92,10 @@ document.addEventListener("click", (e) => {
     modalContent.style.transition = "";
     modal.classList.add("show-modal");
     document.body.style.overflow = "hidden";
+    // Lock height after render
+    requestAnimationFrame(() => {
+      modalContent.style.height = modalContent.offsetHeight + "px";
+    });
     setupDragListeners(); // reattach to fresh element
   }
 

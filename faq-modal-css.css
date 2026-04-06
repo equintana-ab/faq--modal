@@ -182,6 +182,10 @@
     max-height 0.35s ease,
     padding 0.35s ease;
 }
+/* Magento have this default.
+.faq-answer ul {
+  padding-left: 1.5rem;
+} */
 
 .faq-answer p:last-child {
   margin-bottom: 22px;
@@ -218,6 +222,7 @@
 .faq-item input:checked ~ .faq-question .icon:after {
   transform: translate(-50%, -50%) rotate(0deg);
 }
+
 /*  */
 
 .faq-options {
