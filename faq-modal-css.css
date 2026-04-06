@@ -6,17 +6,17 @@
 }
 
 #modal-opener-section {
-  display: flex;
-  align-items: center;
+  /* display: flex; */
+  /* align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 100vh; */
 }
 #open-button {
   display: flex;
   background: #e5f6ff;
-  border-radius: 999px;
+  border-radius: 20px;
   align-items: center;
-  padding: 14px 80px;
+  padding: 10px;
   border: none;
   color: #185baa;
   font-size: 14px;
@@ -25,9 +25,14 @@
   line-height: 21px;
   cursor: pointer;
   gap: 8px;
+  width: 100%;
+  justify-content: center;
   transition:
     transform 0.15s ease,
     box-shadow 0.15s ease;
+}
+#open-button svg {
+  flex-shrink: 0;
 }
 /* Modal */
 #faq-modal {
@@ -182,8 +187,8 @@
     max-height 0.35s ease,
     padding 0.35s ease;
 }
-/* Magento have this default.
-.faq-answer ul {
+/* Magento have this default. */
+/* .faq-answer ul {
   padding-left: 1.5rem;
 } */
 
