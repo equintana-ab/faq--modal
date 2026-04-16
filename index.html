@@ -3,457 +3,68 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FAQ MODAL</title>
-    <link rel="stylesheet" href="faq-modal-css.css" />
-    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
+    <title>FAQ Modal * MAIN BASE</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      h1 {
+        text-align: center;
+        font-family: "Poppins", sans-serif;
+      }
+      ul {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        align-items: center;
+        font-family: "Poppins", sans-serif;
+      }
+
+      ul li {
+        width: 100%;
+        max-width: 280px;
+      }
+
+      ul li a {
+        display: block;
+        text-align: center;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 500;
+        padding: 10px 24px;
+        border-radius: 8px;
+        color: #1e22aa;
+        border: 1px solid #1e22aa;
+        background: transparent;
+        transition:
+          background-color 0.2s ease,
+          color 0.2s ease;
+      }
+
+      ul li a:hover {
+        background-color: #1e22aa;
+        color: #fff;
+      }
+    </style>
   </head>
   <body>
-    <section id="modal-opener-section">
-      <button type="button" id="open-button">
-        <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
-          <path
-            d="M10.6681 1.49731C15.5881 1.65575 19.4139 5.66872 19.2531 10.4241C19.0921 15.1805 15.0021 18.9399 10.0812 18.7815C9.23008 18.7541 8.40767 18.6056 7.63098 18.3528C7.30366 18.2462 6.9278 18.2577 6.61438 18.2922C6.27853 18.3293 5.90927 18.4064 5.54602 18.4983C4.88104 18.6665 4.17881 18.9014 3.63 19.0989C3.63748 18.5063 3.6329 17.7517 3.5802 17.0559C3.55111 16.6719 3.50657 16.2886 3.43762 15.9534C3.37381 15.6432 3.27133 15.2775 3.07434 15.0002C2.02389 13.5226 1.43353 11.736 1.49719 9.85474C1.6582 5.09846 5.74735 1.33903 10.6681 1.49731Z"
-            fill="#D2EDFF"
-            stroke="#185BAA"
-            stroke-width="1.48214"
-            stroke-miterlimit="10"
-            stroke-linejoin="round"
-          />
-          <path
-            d="M10.4812 5.53412C11.4108 5.53412 12.162 5.79703 12.7348 6.32286C13.3076 6.8487 13.594 7.55293 13.594 8.43558C13.594 9.42151 13.2888 10.1539 12.6785 10.6328C12.0681 11.1023 11.2418 11.337 10.1995 11.337L10.1573 12.6751H9.0446L8.98826 10.4497H9.39672C10.3263 10.4497 11.054 10.3089 11.5799 10.0272C12.1057 9.74546 12.3686 9.21494 12.3686 8.43558C12.3686 7.87219 12.1996 7.42617 11.8616 7.09753C11.5235 6.76888 11.0681 6.60456 10.4953 6.60456C9.91316 6.60456 9.45306 6.76419 9.11502 7.08344C8.78638 7.39331 8.62206 7.82054 8.62206 8.36516H7.41077C7.41077 7.80176 7.53753 7.3088 7.79106 6.88626C8.04458 6.45432 8.40139 6.12098 8.8615 5.88624C9.33099 5.65149 9.8709 5.53412 10.4812 5.53412ZM9.5939 15.5625C9.34977 15.5625 9.14319 15.478 8.97417 15.3089C8.80516 15.1399 8.72065 14.9333 8.72065 14.6892C8.72065 14.4451 8.80516 14.2385 8.97417 14.0695C9.14319 13.9005 9.34977 13.816 9.5939 13.816C9.82865 13.816 10.0258 13.9005 10.1855 14.0695C10.3545 14.2385 10.439 14.4451 10.439 14.6892C10.439 14.9333 10.3545 15.1399 10.1855 15.3089C10.0258 15.478 9.82865 15.5625 9.5939 15.5625Z"
-            fill="#019BF0"
-          />
-        </svg>
-        Got questions about home appliances?
-        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="14" viewBox="0 0 13 14" fill="none">
-          <path
-            d="M3.44871 12.1855L9.42651 6.66757L3.44871 1.1496"
-            stroke="#185BAA"
-            stroke-width="1.83932"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-        </svg>
-      </button>
-    </section>
-    <!-- Modal toh -->
-    <div id="faq-modal" class="modal">
-      <div class="modal-content">
-        <div class="faq-section_header-main">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-            <path
-              d="M10.25 11.3679L6.33745 15.2804C6.19106 15.4268 6.00475 15.5 5.77852 15.5C5.55228 15.5 5.36597 15.4268 5.21958 15.2804C5.07319 15.134 5 14.9477 5 14.7215C5 14.4952 5.07319 14.3089 5.21958 14.1625L9.13213 10.25L5.21958 6.33745C5.07319 6.19106 5 6.00475 5 5.77852C5 5.55228 5.07319 5.36597 5.21958 5.21958C5.36597 5.07319 5.55228 5 5.77852 5C6.00475 5 6.19106 5.07319 6.33745 5.21958L10.25 9.13213L14.1625 5.21958C14.3089 5.07319 14.4952 5 14.7215 5C14.9477 5 15.134 5.07319 15.2804 5.21958C15.4268 5.36597 15.5 5.55228 15.5 5.77852C15.5 6.00475 15.4268 6.19106 15.2804 6.33745L11.3679 10.25L15.2804 14.1625C15.4268 14.3089 15.5 14.4952 15.5 14.7215C15.5 14.9477 15.4268 15.134 15.2804 15.2804C15.134 15.4268 14.9477 15.5 14.7215 15.5C14.4952 15.5 14.3089 15.4268 14.1625 15.2804L10.25 11.3679Z"
-              fill="#646464"
-            />
-          </svg>
-          <div class="faq-section_header">
-            <h2>Frequently Asked Questions</h2>
-            <p>Here are quick answers to questions shoppers ask the most.</p>
-          </div>
-
-          <!-- OPTION TOGGLES -->
-          <div class="faq-options">
-            <button class="faq-option active" data-target="dispenser">Dispenser</button>
-            <button class="faq-option" data-target="fan">Electric Fan</button>
-            <button class="faq-option" data-target="microwave">Microwave</button>
-          </div>
-        </div>
-        <!-- SA Superstore FAQs -->
-        <section id="faq-section">
-          <!-- Water DISPENSER -->
-          <div class="faq-container" data-category="dispenser">
-            <div class="faq-item">
-              <input type="checkbox" id="wd-faq1" />
-              <label class="faq-question" for="wd-faq1">
-                <span>How do I choose the right water dispenser for my needs?</span> <span class="icon"></span>
-              </label>
-              <div class="faq-answer">
-                <ul>
-                  <li>
-                    <strong>Top Load Water Dispenser</strong>
-                    – Perfect for homes or offices; you place a large water bottle on top.
-                  </li>
-                  <li>
-                    <strong>Bottom Load Water Dispenser</strong>
-                    – The bottle is hidden at the bottom for easier lifting and a cleaner look. For heavy daily use,
-                    bottom load water dispensers are easier to refill
-                  </li>
-                  <li>
-                    <strong>Countertop / Mini Water Dispenser</strong>
-                    – Compact and portable; ideal for small kitchens or personal use.
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <!--  -->
-
-            <div class="faq-item">
-              <input type="checkbox" id="wd-faq2" />
-              <label class="faq-question" for="wd-faq2">
-                <span>How do I clean and maintain my water dispenser?</span> <span class="icon"></span>
-              </label>
-              <div class="faq-answer">
-                <ul>
-                  <li>Clean the water tank and nozzles regularly to prevent bacteria build-up.</li>
-                  <li>Wipe the exterior with a damp cloth.</li>
-                  <li>Replace water bottles promptly to ensure freshness.</li>
-                  <li>Check the manual for any brand-specific maintenance instructions.</li>
-                </ul>
-              </div>
-            </div>
-
-            <!--  -->
-
-            <div class="faq-item">
-              <input type="checkbox" id="wd-faq3" />
-              <label class="faq-question" for="wd-faq3">
-                <span>Are water dispensers safe for drinking water?</span> <span class="icon"></span>
-              </label>
-              <div class="faq-answer">
-                <p>
-                  Yes, water dispensers are made from food-grade materials. For best hygiene, always use clean, sealed
-                  water bottles and follow maintenance guidelines.
-                </p>
-              </div>
-            </div>
-
-            <!--  -->
-
-            <div class="faq-item">
-              <input type="checkbox" id="wd-faq4" />
-              <label class="faq-question" for="wd-faq4">
-                <span>Can I get a water dispenser on installment at Abenson.com?</span> <span class="icon"></span>
-              </label>
-              <div class="faq-answer">
-                <p>
-                  Yes! Abenson offers flexible payment options, including credit card installments, for all water
-                  dispensers purchased online.
-                </p>
-              </div>
-            </div>
-
-            <!--  -->
-
-            <div class="faq-item">
-              <input type="checkbox" id="wd-faq5" />
-              <label class="faq-question" for="wd-faq5">
-                <span>Do water dispensers come in different colors?</span> <span class="icon"></span>
-              </label>
-              <div class="faq-answer">
-                <p>
-                  Yes, water dispensers are available in a variety of colors to suit your home or office decor. Common
-                  colors include:
-                </p>
-
-                <p>
-                  <strong>Black</strong> – Sleek and modern, fits well in contemporary kitchens and offices. See black
-                  water dispensers <a href="/small-appliance/water-dispenser/color/black.html">here.</a>
-                </p>
-
-                <p>
-                  <strong>Grey/Silver</strong> – Elegant and neutral, ideal for blending with most appliances and
-                  interiors. See grey/silver water dispensers
-                  <a href="/small-appliance/water-dispenser/color/gray-silver.html">here.</a>
-                </p>
-
-                <p>
-                  <strong>White</strong> – Classic and clean, perfect for bright spaces and minimalistic setups. See
-                  white water dispensers <a href="/small-appliance/water-dispenser/color/white.html">here.</a>
-                </p>
-              </div>
-            </div>
-
-            <!--  -->
-
-            <div class="faq-item">
-              <input type="checkbox" id="wd-faq6" />
-              <label class="faq-question" for="wd-faq6">
-                <span>What are the common features of water dispensers?</span> <span class="icon"></span>
-              </label>
-              <div class="faq-answer">
-                <div>
-                  <p>
-                    Water dispensers come with various features to enhance convenience, safety, and usability. These
-                    features include:
-                  </p>
-                  <ul>
-                    <li>
-                      <strong>Child Lock</strong> – Prevents accidental dispensing of hot water, keeping children safe.
-                    </li>
-                    <li>
-                      <strong>Hot & Cold Dispenser</strong> – Provides both chilled and hot water for beverages and
-                      cooking.
-                    </li>
-                    <li>
-                      <strong>Storage Cabinet</strong> – Offers extra space to store cups, bottles, or water refills.
-                    </li>
-                    <li>
-                      <strong>Energy Saving Modes</strong> – Helps reduce power consumption while maintaining optimal
-                      performance.
-                    </li>
-                    <li>
-                      <strong>UV Filtration</strong> – Helps purify water by removing bacteria and other harmful
-                      microorganisms.
-                    </li>
-                    <li>
-                      <strong>Ice Maker</strong> – Produces ice for drinks and refreshments, ideal for home or office
-                      use.
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- ELECTRIC FAN -->
-          <div class="faq-container hidden" data-category="fan">
-            <!--  -->
-            <div class="faq-item">
-              <input type="checkbox" id="fans-faq1" />
-              <label class="faq-question" for="fans-faq1">
-                <span> What type of electric fan should I get?</span> <span class="icon"></span>
-              </label>
-              <div class="faq-answer">
-                <p>Choosing a fan depends on your space, airflow preference, and portability.</p>
-
-                <p>
-                  <strong>Stand Fans</strong> &mdash; great for living rooms or bedrooms; adjustable height for wider
-                  airflow.
-                </p>
-
-                <p>
-                  <strong>Desk Fans</strong> &mdash; compact and perfect for personal cooling on tables or work desks.
-                </p>
-
-                <p>
-                  <strong>Ceiling Fans</strong> &mdash; ideal for larger rooms; provide steady, even air circulation.
-                </p>
-
-                <p>
-                  <strong>Industrial Fans</strong> &mdash; built for heavy-duty use and larger spaces like workshops or
-                  open areas.
-                </p>
-
-                <p>
-                  <strong>Mini Fans</strong> &mdash; ultra-portable and battery-operated; ideal for personal use at your
-                  desk, bedside, or while traveling.
-                </p>
-
-                <p>
-                  <strong>Portable Fans</strong> &mdash; lightweight and easy to move around for quick cooling anywhere.
-                </p>
-
-                <p>
-                  <strong>Air Coolers</strong> &mdash; use water or ice to deliver cooler air; a good choice for areas
-                  with hot, dry climates.
-                </p>
-
-                <p>
-                  <strong>Air Purifying Fans</strong> (Dyson, Crane) &mdash; combine cooling with air purification,
-                  effectively circulating clean air while removing allergens, dust, and pollutants. Ideal for improving
-                  air quality in bedrooms, offices, and living spaces.
-                </p>
-
-                <p>
-                  <strong>Air Circulator Fans</strong> &mdash; provides energy efficient, consistent coverage rather
-                  than the directed, forced air in order to create the wind-chill cooling effect of a smaller fan.
-                </p>
-              </div>
-            </div>
-
-            <!--  -->
-
-            <div class="faq-item">
-              <input type="checkbox" id="fans-faq2" />
-              <label class="faq-question" for="fans-faq2">
-                <span> What type of blade is used?</span> <span class="icon"></span>
-              </label>
-              <div class="faq-answer">
-                <p>
-                  Fan blades are usually made from ABS (Acrylonitrile Butadiene Styrene), plastic, or stainless steel,
-                  depending on the model:
-                </p>
-
-                <p><strong>ABS blades</strong> &mdash; durable, lightweight, and resistant to cracking.</p>
-
-                <p><strong>Plastic blades</strong> &mdash; affordable, safe, and ideal for everyday home use.</p>
-
-                <p>
-                  <strong>Stainless steel blades</strong> &mdash; sturdy, long-lasting, and great for stronger airflow.
-                </p>
-              </div>
-            </div>
-
-            <!--  -->
-
-            <div class="faq-item">
-              <input type="checkbox" id="fans-faq3" />
-              <label class="faq-question" for="fans-faq3">
-                <span> Is the fan height adjustable?</span> <span class="icon"></span>
-              </label>
-              <div class="faq-answer">
-                <p>
-                  Many stand fans come with adjustable height features, allowing you to customize the airflow to your
-                  preference. You can browse our stand fan collection
-                  <a href="/small-appliances/fans/stand-fan.html">here.</a>
-                </p>
-              </div>
-            </div>
-
-            <!--  -->
-
-            <div class="faq-item">
-              <input type="checkbox" id="fans-faq4" />
-              <label class="faq-question" for="fans-faq4">
-                <span>What’s the difference between inverter fans and rechargeable fans?</span>
-                <span class="icon"></span>
-              </label>
-              <div class="faq-answer">
-                <p>
-                  Inverter fans are designed to save energy by adjusting motor speed for efficient performance, perfect
-                  for long daily use.
-                </p>
-                <p>
-                  Rechargeable fans, on the other hand, run on built-in batteries and are ideal for use during power
-                  interruptions or when you need portability.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- MICROWAVE -->
-          <div class="faq-container hidden" data-category="microwave">
-            <div class="faq-item">
-              <input type="checkbox" id="microwave-faq1" />
-              <label class="faq-question" for="microwave-faq1">
-                <span>What types of microwave ovens are available?</span> <span class="icon"></span>
-              </label>
-              <div class="faq-answer">
-                <ul>
-                  <li>
-                    Digital: offers preset cooking programs, precise time and power settings, and easy-to-read digital
-                    controls for convenient cooking.
-                  </li>
-                  <li>
-                    Mechanical: ideal for simple tasks like reheating, defrosting, and basic cooking. Easy to use with
-                    manual dial controls.
-                  </li>
-                  <li>
-                    Additional
-                    <ul>
-                      <li>Inverter</li>
-                      <li>Commercial</li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <!--  -->
-
-            <div class="faq-item">
-              <input type="checkbox" id="microwave-faq2" />
-              <label class="faq-question" for="microwave-faq2">
-                <span>What size (capacity) should I get?</span> <span class="icon"></span>
-              </label>
-              <div class="faq-answer">
-                <div>
-                  <p>Choose the liter capacity based on how many people you cook for or how big your dishes are:</p>
-                  <ul>
-                    <li>
-                      <strong>20–25 Liters:</strong> Ideal for day-to-day essentials like reheating single-serving
-                      meals, preparing snacks, or light cooking for 1–2 people.
-                    </li>
-                    <li>
-                      <strong>28–32 Liters:</strong> Great for families; perfect for reheating dinner plates, cooking
-                      medium-sized dishes, and preparing meals for 3–4 people.
-                    </li>
-                    <li>
-                      <strong>32 L+:</strong> Best for larger households or home cooks who often defrost, cook, or
-                      reheat large portions and multiple dishes at once.
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <!--  -->
-
-            <div class="faq-item">
-              <input type="checkbox" id="microwave-faq3" />
-              <label class="faq-question" for="microwave-faq3">
-                <span>How much wattage do I need?</span>
-                <span class="icon"></span>
-              </label>
-              <div class="faq-answer">
-                <p>
-                  For everyday use, 700–900 W is usually sufficient. If you cook often or want more power, 1000 W or
-                  more might be better. Always check the specs for the model you’re considering.
-                </p>
-              </div>
-            </div>
-
-            <!--  -->
-
-            <div class="faq-item">
-              <input type="checkbox" id="microwave-faq4" />
-              <label class="faq-question" for="microwave-faq4">
-                <span>What features should I look for?</span>
-                <span class="icon"></span>
-              </label>
-              <div class="faq-answer">
-                <div>
-                  <p>Here are helpful features to consider:</p>
-                  <ul>
-                    <li>Auto-cook presets for easier one-touch cooking</li>
-                    <li>Sensor cooking / humidity sensors for more precise results</li>
-                    <li>Turntable / Flatbed design (flatbed gives you more usable space)</li>
-                    <li>Child lock / safety features</li>
-                    <li>Grill rack or baking tray (for grill or convection models)</li>
-                    <li>Inverter</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <!--  -->
-
-            <div class="faq-item">
-              <input type="checkbox" id="microwave-faq5" />
-              <label class="faq-question" for="microwave-faq5">
-                <span>What is an Inverter Microwave?</span>
-                <span class="icon"></span>
-              </label>
-              <div class="faq-answer">
-                <p>
-                  An Inverter microwave delivers a steady, consistent stream of energy, which cooks or defrosts your
-                  food more evenly. It's especially great for precise results and perfect defrosting.
-                </p>
-              </div>
-            </div>
-
-            <!--  -->
-
-            <div class="faq-item">
-              <input type="checkbox" id="microwave-faq6" />
-              <label class="faq-question" for="microwave-faq6">
-                <span>Where should I install / place my microwave oven?</span>
-                <span class="icon"></span>
-              </label>
-              <div class="faq-answer">
-                <ul>
-                  <li>Leave adequate ventilation space around the microwave oven (rear and top)</li>
-                  <li>Avoid placing it in closed cabinets without airflow</li>
-                  <li>For over-the-range microwave ovens, ensure proper clearance above stoves</li>
-                  <li>Place it at safe working height so you don’t have to lift hot dishes above shoulder level</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
-    </div>
-    <script src="faq-modal-script.js"></script>
+    <h1>FAQ Modal * MAIN BASE</h1>
+    <ul>
+      <h2>SUPERSTORE</h2>
+      <li><a href="mobile-superstore.html" target="_blank">Mobile Phone FAQs - Solo in container</a></li>
+      <li><a href="gadgets-superstore.html" target="_blank">Gadgets Superstore FAQs - Solo in container</a></li>
+      <h2>In shared container. <span style="color: red">Note Revised CSS - base in the sample in staging</span></h2>
+      <li style="background-color: yellow">
+        <a href="https://pwa.abenson-shop.online/pwa-superstore-home-appliance" target="_blank"
+          >Click me! <br />
+          sample in staging</a
+        >
+      </li>
+      <li><a href="Small-Appliance-superstore.html" target="_blank">Small Appliance FAQs - In shared container</a></li>
+    </ul>
   </body>
 </html>

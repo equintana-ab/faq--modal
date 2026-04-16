@@ -1,10 +1,13 @@
+// JS FAQ MODAL APRIL 6, 2026
 let isDragging = false;
 let startY = 0;
 let currentY = 0;
+let scrollY = 0;
 
 // Getters
 const getModal = () => document.getElementById("faq-modal");
-const getModalContent = () => document.querySelector(".modal-content");
+const getModalContent = () => document.querySelector(".modal-content-faq");
+const getDragHandle = () => document.querySelector(".faq-section_header-main");
 
 function closeModal(slide = false) {
   const modal = getModal();
@@ -22,7 +25,11 @@ function closeModal(slide = false) {
       modal.classList.remove("show-modal");
       modal.style.cssText = "";
       modalContent.style.cssText = "";
-      document.body.style.overflow = "auto";
+      document.body.style.overflow = "";
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.width = "";
+      window.scrollTo(0, scrollY);
     },
     slide ? 300 : 0,
   );
@@ -64,15 +71,17 @@ function onTouchEnd() {
 const mobileQuery = window.matchMedia("(max-width: 767px)");
 
 function setupDragListeners() {
-  const modalContent = getModalContent();
-  if (!modalContent) return;
-  modalContent.removeEventListener("touchstart", onTouchStart);
-  modalContent.removeEventListener("touchmove", onTouchMove);
-  modalContent.removeEventListener("touchend", onTouchEnd);
+  const dragHandle = getDragHandle();
+  if (!dragHandle) return;
+
+  dragHandle.removeEventListener("touchstart", onTouchStart);
+  dragHandle.removeEventListener("touchmove", onTouchMove);
+  dragHandle.removeEventListener("touchend", onTouchEnd);
+
   if (mobileQuery.matches) {
-    modalContent.addEventListener("touchstart", onTouchStart);
-    modalContent.addEventListener("touchmove", onTouchMove);
-    modalContent.addEventListener("touchend", onTouchEnd);
+    dragHandle.addEventListener("touchstart", onTouchStart);
+    dragHandle.addEventListener("touchmove", onTouchMove);
+    dragHandle.addEventListener("touchend", onTouchEnd);
   }
 }
 
@@ -92,15 +101,16 @@ document.addEventListener("click", (e) => {
     modalContent.style.transition = "";
     modal.classList.add("show-modal");
     document.body.style.overflow = "hidden";
-    // Lock height after render
-    requestAnimationFrame(() => {
-      modalContent.style.height = modalContent.offsetHeight + "px";
-    });
+    //
+    scrollY = window.scrollY;
+    document.body.style.position = "fixed";
+    document.body.style.top = `-${scrollY}px`;
+    document.body.style.width = "100%";
     setupDragListeners(); // reattach to fresh element
   }
 
   // Close (X button)
-  if (e.target.closest(".faq-section_header-main > svg")) {
+  if (e.target.closest(".faq-close-btn > svg")) {
     closeModal();
   }
 
@@ -113,14 +123,15 @@ document.addEventListener("click", (e) => {
 // Prevent clicks inside modal from closing it
 document.addEventListener("click", (e) => {
   const modal = getModal();
-  if (e.target.closest(".modal-content") && e.target !== modal) {
+  if (e.target.closest(".modal-content-faq") && e.target !== modal) {
     e.stopPropagation();
   }
 });
 
+/// Javascript- change tabs and open close question
 function initFaqTabs() {
-  const options = document.querySelectorAll(".faq-option");
-  const containers = document.querySelectorAll(".faq-container");
+  const options = document.querySelectorAll("#faq-modal .faq-option");
+  const containers = document.querySelectorAll("#faq-modal .faq-container");
 
   if (!options.length) return;
 
@@ -144,17 +155,13 @@ function initFaqTabs() {
 }
 
 document.addEventListener("click", (e) => {
-  const option = e.target.closest(".faq-option");
+  const option = e.target.closest("#faq-modal .faq-option");
   if (!option) return;
-
   const target = option.dataset.target;
-
-  document.querySelectorAll(".faq-option").forEach((o) => o.classList.remove("active"));
-
+  document.querySelectorAll("#faq-modal .faq-option").forEach((o) => o.classList.remove("active"));
   option.classList.add("active");
-
   document
-    .querySelectorAll(".faq-container")
+    .querySelectorAll("#faq-modal .faq-container")
     .forEach((c) => c.classList.toggle("hidden", c.dataset.category !== target));
 });
 
