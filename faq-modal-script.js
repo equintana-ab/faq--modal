@@ -127,9 +127,8 @@ document.addEventListener("click", (e) => {
     e.stopPropagation();
   }
 });
-
 /// Javascript- change tabs and open close question
-function initFaqTabs() {
+function initModalFaqTabs() {
   const options = document.querySelectorAll("#faq-modal .faq-option");
   const containers = document.querySelectorAll("#faq-modal .faq-container");
 
@@ -145,7 +144,6 @@ function initFaqTabs() {
       containers.forEach((c) => {
         c.classList.toggle("hidden", c.dataset.category !== target);
 
-        // optional: close open accordions
         if (c.dataset.category !== target) {
           c.querySelectorAll("input[type='checkbox']").forEach((i) => (i.checked = false));
         }
@@ -157,16 +155,17 @@ function initFaqTabs() {
 document.addEventListener("click", (e) => {
   const option = e.target.closest("#faq-modal .faq-option");
   if (!option) return;
+
   const target = option.dataset.target;
+
   document.querySelectorAll("#faq-modal .faq-option").forEach((o) => o.classList.remove("active"));
+
   option.classList.add("active");
+
   document
     .querySelectorAll("#faq-modal .faq-container")
     .forEach((c) => c.classList.toggle("hidden", c.dataset.category !== target));
 });
 
-// Runs on normal load
-document.addEventListener("DOMContentLoaded", initFaqTabs);
-
-// Runs when coming back via browser back button
-window.addEventListener("pageshow", initFaqTabs);
+document.addEventListener("DOMContentLoaded", initModalFaqTabs);
+window.addEventListener("pageshow", initModalFaqTabs);

@@ -5,7 +5,7 @@
   font-family: "Poppins";
 }
 
-/* FAQ MODAL CSS APRIL 6, 2026  */
+/* FAQ MODAL SHARED ROW CSS APRIL 6, 2026  */
 
 #open-button {
   display: flex;
@@ -15,22 +15,20 @@
   padding: 10px;
   border: none;
   color: #185baa;
-  font-size: 14px;
+  font-size: clamp(12px, 2vw, 14px);
   font-style: normal;
   font-weight: 500;
   line-height: 21px;
   cursor: pointer;
   gap: 8px;
   width: 100%;
-  justify-content: center;
-  transition:
-    transform 0.15s ease,
-    box-shadow 0.15s ease;
+  justify-content: space-between;
+  height: 100%;
 }
-#open-button svg {
+#open-button svg,
+.jumbotron svg {
   flex-shrink: 0;
 }
-/* Modal */
 #faq-modal {
   position: fixed;
   inset: 0;
@@ -64,12 +62,10 @@
   visibility: visible;
   background: rgba(0, 0, 0, 0.5);
 }
-
 #faq-modal.show-modal .modal-content-faq {
   transform: translateY(0);
 }
-/*  faq*/
-#faq-section {
+#faq-modal #faq-section-modal {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -81,17 +77,17 @@
   max-width: 840px;
   min-height: 0;
 }
-#faq-section :is(h2, p, label) {
+#faq-modal #faq-section-modal :is(h2, p, label) {
   margin: unset;
 }
-.faq-section_header-main {
+#faq-modal .faq-section_header-main {
   flex-shrink: 0;
   z-index: 1000;
   background-color: #fff;
   width: 100%;
   position: relative;
 }
-.faq-section_header {
+#faq-modal .faq-section_header {
   display: grid;
   gap: 8px;
   text-align: center !important;
@@ -99,18 +95,18 @@
   margin-bottom: 15px;
   padding: 0 16px;
 }
-.faq-section_header h2 {
+#faq-modal .faq-section_header h2 {
   color: #185baa;
   font-size: clamp(18px, 2.6vw, 28px);
   margin: unset;
   font-weight: 600;
 }
-.faq-section_header p {
+#faq-modal .faq-section_header p {
   font-size: clamp(14px, 1.6vw, 18px);
   margin: unset;
   font-weight: 500;
 }
-.faq-close-btn {
+#faq-modal .faq-close-btn {
   width: 28px;
   height: 28px;
   display: flex;
@@ -124,11 +120,11 @@
   top: -25px;
   right: -4px;
 }
-.faq-container {
+#faq-modal .faq-container {
   width: 100%;
   height: 100%;
 }
-.faq-item {
+#faq-modal .faq-item {
   margin-bottom: 16px;
   border-radius: 24px;
   border: 1px solid var(--Grey-2, #dcdcdc);
@@ -137,11 +133,10 @@
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.03);
   position: relative;
 }
-/* Hide checkbox */
-.faq-item input {
+#faq-modal .faq-item input {
   display: none;
 }
-.faq-question {
+#faq-modal .faq-question {
   display: flex;
   justify-content: space-between;
   color: var(--PrimaryTextColor-PrimaryText90, #4c525c);
@@ -152,16 +147,14 @@
   position: relative;
   user-select: none;
 }
-
-.faq-question .icon {
+#faq-modal .faq-question .icon {
   position: relative;
   width: 24px;
   height: 24px;
   margin-left: 16px;
 }
-
-.faq-question .icon:before,
-.faq-question .icon:after {
+#faq-modal .faq-question .icon:before,
+#faq-modal .faq-question .icon:after {
   content: "";
   position: absolute;
   width: clamp(12px, 2vw, 16px);
@@ -172,14 +165,10 @@
   transform: translate(-50%, -50%);
   transition: transform 0.3s;
 }
-
-/* Vertical line (for "+") */
-.faq-question .icon:after {
+#faq-modal .faq-question .icon:after {
   transform: translate(-50%, -50%) rotate(90deg);
 }
-
-/* Answer content */
-.faq-answer {
+#faq-modal .faq-answer {
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -193,58 +182,41 @@
     max-height 0.35s ease,
     padding 0.35s ease;
 }
-/* Magento have this default. */
-/* .faq-answer ul {
-  padding-left: 1.5rem;
-} */
-
-.faq-answer p:last-child {
+#faq-modal .faq-answer p:last-child {
   margin-bottom: 22px;
 }
-
-.faq-answer :is(td, th, tr) {
+#faq-modal .faq-answer :is(td, th, tr) {
   border: 1px solid #ccc;
   padding: 8px;
 }
-
-.faq-answer table {
+#faq-modal .faq-answer table {
   border-spacing: 0;
   width: 100%;
   border-collapse: collapse;
 }
-
-.faq-answer strong {
+#faq-modal .faq-answer strong {
   font-weight: 600;
 }
-
-#faq-section .faq-answer a {
+#faq-modal .faq-answer a {
   font-size: 14px !important;
   text-decoration: underline !important;
   color: #337ab7;
 }
-
-/* When OPEN */
-.faq-item input:checked ~ .faq-answer {
+#faq-modal .faq-item input:checked ~ .faq-answer {
   max-height: fit-content;
   padding: 0 28px 20px 28px;
 }
-
-/* Turn "+" into "-" */
-.faq-item input:checked ~ .faq-question .icon:after {
+#faq-modal .faq-item input:checked ~ .faq-question .icon:after {
   transform: translate(-50%, -50%) rotate(0deg);
 }
-
-/*  */
-
-.faq-options {
+#faq-modal .faq-options {
   display: flex;
   justify-content: center;
   gap: 12px;
   flex-wrap: wrap;
   margin-bottom: 15px;
 }
-
-.faq-option {
+#faq-modal .faq-option {
   padding: 7px 14px;
   border-radius: 999px;
   border: 1px solid #dcdcdc;
@@ -254,18 +226,19 @@
   font-size: 14px;
   color: #4c525c;
 }
-
-.faq-option.active {
+#faq-modal .faq-option.active {
   border: 1px solid var(--PrimaryColor-Blue60, #185baa);
   color: var(--PrimaryColor-Blue60, #185baa);
 }
-
-.faq-container.hidden {
+#faq-modal .faq-container.hidden {
   display: none;
 }
-
+@media only screen and (min-width: 700px) {
+  #open-button {
+    justify-content: center;
+  }
+}
 @media (width >= 768px) {
-  /* In modal */
   #faq-modal {
     inset: 0;
     display: none;
@@ -285,7 +258,7 @@
     overflow: hidden;
     animation: modalFade 0.3s ease;
   }
-  .faq-close-btn {
+  #faq-modal .faq-close-btn {
     top: -23px;
     right: -15px;
   }
@@ -293,7 +266,6 @@
     padding: unset !important;
   }
 }
-/* KEYFRAMES DITOH */
 @keyframes modalFade {
   from {
     transform: translateY(0);
