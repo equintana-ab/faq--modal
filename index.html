@@ -4,70 +4,315 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FAQ Modal * MAIN BASE</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+
     <style>
-      h1 {
-        text-align: center;
-        font-family: "Poppins", sans-serif;
-      }
-      ul {
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        align-items: center;
+      body {
         font-family: "Poppins", sans-serif;
       }
 
-      ul li {
+      h1,
+      h2 {
+        text-align: center;
+      }
+      h2 {
+        margin-top: 40px;
+        color: green;
+      }
+      table {
+        margin: 20px auto;
+        border-collapse: collapse;
         width: 100%;
-        max-width: 280px;
+        max-width: 700px;
       }
 
-      ul li a {
-        display: block;
+      th,
+      td {
+        border: 1px solid #ccc;
+        padding: 12px;
         text-align: center;
+        min-width: 200px;
+      }
+
+      th {
+        background-color: #f5f5f5;
+        font-weight: 600;
+      }
+
+      /* MAIN BUTTON */
+      .main-link {
+        display: block;
         text-decoration: none;
-        font-size: 16px;
+        font-size: 14px;
         font-weight: 500;
-        padding: 10px 24px;
+        padding: 10px 16px;
         border-radius: 8px;
         color: #1e22aa;
         border: 1px solid #1e22aa;
-        background: transparent;
-        transition:
-          background-color 0.2s ease,
-          color 0.2s ease;
+        transition: 0.2s;
       }
 
-      ul li a:hover {
+      .main-link:hover {
         background-color: #1e22aa;
         color: #fff;
       }
+
+      /* SUB LINK (normal) */
+      .sub-link {
+        text-decoration: underline;
+        color: #1e22aa;
+        font-size: 14px;
+      }
+
+      .sub-link:hover {
+        color: #0d1175;
+      }
+
+      .highlight {
+        background-color: yellow;
+      }
+
+      .note {
+        color: red;
+        font-size: 14px;
+      }
     </style>
   </head>
+
   <body>
-    <h1>FAQ Modal * MAIN BASE</h1>
-    <ul>
-      <h2>SUPERSTORE</h2>
-      <li><a href="solo/mobile-superstore.html" target="_blank">Mobile Phone FAQs - Solo in container</a></li>
-      <li><a href="solo/gadgets-superstore.html" target="_blank">Gadgets Superstore FAQs - Solo in container</a></li>
-      <li><a href="solo/television-superstore.html" target="_blank">Television FAQs - Solo in container</a></li>
-      <h2>In shared container. <span style="color: red">Note Revised CSS - base in the sample in staging</span></h2>
-      <li style="background-color: yellow">
-        <a href="https://pwa.abenson-shop.online/pwa-superstore-home-appliance" target="_blank"
-          >Click me! <br />
-          sample in staging</a
-        >
-      </li>
-      <li>
-        <a href="sharing/Small-Appliance-superstore.html" target="_blank">Small Appliance FAQs - In shared container</a>
-      </li>
-    </ul>
+    <h1>
+      FAQ Modal * MAIN BASE
+      <br />
+      <span class="note"
+        >NOTE: Revise the JS in current faq in live site - change scope of the target class - base in the sample in
+        staging</span
+      >
+    </h1>
+
+    <!-- TABLE 1: SUPERSTORE -->
+    <h2>---SOLO IN THE ROW---</h2>
+    <table>
+      <tr>
+        <th>Modal Test</th>
+        <th>Live Page where it will be deployed</th>
+      </tr>
+      <!-- Mobile Phone FAQs -->
+      <tr>
+        <td>
+          <a class="main-link" href="solo/mobile-superstore.html" target="_blank"> Mobile Phone FAQs </a>
+        </td>
+        <td>
+          <a class="sub-link" href="https://www.abenson.com/pwa-mobile" target="_blank"
+            >https://www.abenson.com/pwa-mobile</a
+          >
+          <a class="sub-link" href="https://www.abenson.com/mobile/smartphone.html" target="_blank"
+            >https://www.abenson.com/mobile/smartphone.html</a
+          >
+        </td>
+      </tr>
+      <!-- Gadgets FAQs -->
+      <tr>
+        <td>
+          <a class="main-link" href="solo/gadgets-superstore.html" target="_blank"> Gadgets FAQs </a>
+        </td>
+        <td>
+          <a class="sub-link" href="https://www.abenson.com/pwa-computers-gadget" target="_blank"
+            >https://www.abenson.com/pwa-computers-gadget</a
+          >
+          <a class="sub-link" href="https://www.abenson.com/computers-gadget/laptops-pc.html" target="_blank"
+            >https://www.abenson.com/computers-gadget/laptops-pc.html</a
+          >
+        </td>
+      </tr>
+      <!-- Personal Audio FAQs -->
+      <tr>
+        <td>
+          <a class="main-link" href="solo/personal-audio-attr-pg.html" target="_blank"> Personal Audio FAQs </a>
+        </td>
+        <td>
+          <a class="sub-link" href="https://www.abenson.com/computers-gadget/personal-audio.html" target="_blank"
+            >https://www.abenson.com/computers-gadget/personal-audio.html</a
+          >
+        </td>
+      </tr>
+      <!-- Television FAQs -->
+      <tr>
+        <td>
+          <a class="main-link" href="solo/television-superstore.html" target="_blank"> Television FAQs </a>
+        </td>
+        <td>
+          <a class="sub-link" href="https://www.abenson.com/pwa-television" target="_blank"
+            >https://www.abenson.com/pwa-television</a
+          >
+          <a class="sub-link" href="https://www.abenson.com/television/tv.html" target="_blank"
+            >https://www.abenson.com/television/tv.html</a
+          >
+        </td>
+      </tr>
+      <!-- Aircon FAQs -->
+      <tr>
+        <td>
+          <a class="main-link" href="solo/aircon-superstore.html" target="_blank"> Aircon FAQs </a>
+        </td>
+        <td>
+          <a class="sub-link" href="https://www.abenson.com/pwa-aircon" target="_blank"
+            >https://www.abenson.com/pwa-aircon</a
+          >
+        </td>
+      </tr>
+      <!-- Appliance Padala FAQs -->
+      <tr>
+        <td>
+          <a class="main-link" href="solo/appliance-padala-page.html" target="_blank"> Appliance Padala FAQs </a>
+        </td>
+        <td>
+          <a class="sub-link" href="https://www.abenson.com/pages/appliance-padala" target="_blank"
+            >https://www.abenson.com/pages/appliance-padala</a
+          >
+        </td>
+      </tr>
+      <!-- Abensone Home Superstore FAQs -->
+      <tr>
+        <td>
+          <a class="main-link" href="solo/abensonhome-superstore.html" target="_blank">
+            Abensone Home Superstore FAQs
+          </a>
+        </td>
+        <td>
+          <a class="sub-link" href="https://www.abenson.com/abensonhome" target="_blank"
+            >https://www.abenson.com/abensonhome</a
+          >
+        </td>
+      </tr>
+      <!-- Next Day Delivery FAQs -->
+      <tr>
+        <td>
+          <a class="main-link" href="solo/next-day-delivery.html" target="_blank"> Next Day Delivery FAQs </a>
+        </td>
+        <td>
+          <a class="sub-link" href="https://www.abenson.com/campaigns/next-day-delivery" target="_blank"
+            >https://www.abenson.com/campaigns/next-day-delivery</a
+          >
+        </td>
+      </tr>
+      <!-- Same Day Delivery FAQs -->
+      <tr>
+        <td>
+          <a class="main-link" href="solo/same-day-delivery.html" target="_blank"> Same Day Delivery FAQs </a>
+        </td>
+        <td>
+          <a class="sub-link" href="https://www.abenson.com/campaigns/same-day-delivery" target="_blank"
+            >https://www.abenson.com/campaigns/same-day-delivery</a
+          >
+        </td>
+      </tr>
+      <!-- Induction Cooking FAQs -->
+      <tr>
+        <td>
+          <a class="main-link" href="solo/inductionCooking.html" target="_blank"> Induction Cooking FAQs </a>
+        </td>
+        <td>
+          <a
+            class="sub-link"
+            href="https://www.abenson.com/small-appliances/electric-stove-induction-cooker.html"
+            target="_blank"
+            >https://www.abenson.com/small-appliances/electric-stove-induction-cooker.html
+          </a>
+          <br />
+          <a
+            class="sub-link"
+            href="https://www.abenson.com/induction-and-electric-kitchen-appliances.html"
+            target="_blank"
+            >https://www.abenson.com/induction-and-electric-kitchen-appliances.html</a
+          >
+        </td>
+      </tr>
+      <!-- Power Up Solutions FAQs -->
+      <tr>
+        <td>
+          <a class="main-link" href="solo/powerUpSolutions.html" target="_blank"> Power Up Solutions FAQs </a>
+        </td>
+        <td>
+          <a
+            class="sub-link"
+            href="https://www.abenson.com/computers-gadgets/lifestyle-electronics/power-solutions.html"
+            target="_blank"
+            >https://www.abenson.com/computers-gadgets/lifestyle-electronics/power-solutions.html</a
+          >
+        </td>
+      </tr>
+      <!-- Power Bank FAQs -->
+      <tr>
+        <td>
+          <a class="main-link" href="solo/powerBank.html" target="_blank"> Power Bank FAQs </a>
+        </td>
+        <td>
+          <a
+            class="sub-link"
+            href="https://www.abenson.com/computers-gadgets/lifestyle-electronics/on-the-go-tech/power-bank.html"
+            target="_blank"
+            >https://www.abenson.com/computers-gadgets/lifestyle-electronics/on-the-go-tech/power-bank.html</a
+          >
+        </td>
+      </tr>
+      <!-- Power Station FAQs -->
+      <tr>
+        <td>
+          <a class="main-link" href="solo/powerStation.html" target="_blank"> Power Station FAQs </a>
+        </td>
+        <td>
+          <a
+            class="sub-link"
+            href="https://www.abenson.com/computers-gadgets/lifestyle-electronics/power-solutions/powerstation.html"
+            target="_blank"
+            >https://www.abenson.com/computers-gadgets/lifestyle-electronics/power-solutions/powerstation.html</a
+          >
+        </td>
+      </tr>
+      <!-- Rechargeable Fan FAQs -->
+      <tr>
+        <td>
+          <a class="main-link" href="solo/rechargeableFan.html" target="_blank"> Rechargeable Fan FAQs </a>
+        </td>
+        <td>
+          <a class="sub-link" href="https://www.abenson.com/small-appliances/fans/specialty-fan.html" target="_blank"
+            >https://www.abenson.com/small-appliances/fans/specialty-fan.html</a
+          >
+        </td>
+      </tr>
+    </table>
+
+    <!-- TABLE 2: SHARED CONTAINER -->
+    <h2>
+      IN ROW WITH ANOTHER BUTTON <br />
+      <a
+        class="main-link"
+        style="width: 43%; margin: 0 auto"
+        href="https://pwa.abenson-shop.online/pwa-superstore-home-appliance"
+        target="_blank">
+        Click me! <br />
+        sample in staging
+      </a>
+    </h2>
+
+    <table>
+      <tr>
+        <th>Modal Test</th>
+        <th>Live Page where it will be deployed</th>
+      </tr>
+      <tr>
+        <td>
+          <a class="main-link" href="sharing/Small-Appliance-superstore.html" target="_blank">
+            Small Appliance FAQs - In shared container
+          </a>
+        </td>
+        <td>
+          <a class="sub-link" href="https://www.abenson.com/pwa-small-appliance" target="_blank"
+            >https://www.abenson.com/pwa-small-appliance</a
+          >
+        </td>
+      </tr>
+    </table>
   </body>
 </html>
