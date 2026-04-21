@@ -194,7 +194,6 @@
   width: 100%;
   border-collapse: collapse;
   overflow-x: auto;
-  display: block;
 }
 #faq-modal .faq-answer strong {
   font-weight: 600;
